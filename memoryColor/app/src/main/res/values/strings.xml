@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">memoryColor</string>
+    <string name="block1"></string>
+    <string name="block2"></string>
+    <string name="block3"></string>
+    <string name="block4"></string>
+    <string name="block5"></string>
+    <string name="block6"></string>
+    <string name="block7"></string>
+    <string name="block8"></string>
+    <string name="block9"></string>
+    <string name="block10"></string>
+    <string name="Nbvie">Nombre de vie : 0</string>
+</resources>
