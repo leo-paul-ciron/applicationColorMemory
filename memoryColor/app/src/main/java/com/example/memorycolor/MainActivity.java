@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     int [] PlayerBlock= new int[10];
     int nbBlockIlumine = 0;
     int maxBlock = 1;
+    boolean test;
     Handler handler = new Handler();
     TextView t1;
     int NbVie = 2;
@@ -37,57 +38,14 @@ public class MainActivity extends AppCompatActivity {
         btns[3] = findViewById(R.id.btn3);
         btns[4] = findViewById(R.id.btn4);
         nbBlockIlumine += 2;
-        for (int idx1=0; idx1<2; idx1++ ){
-            t1.setText("Nombre de vie : "+ NbVie);
-            Thread tempsMort = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        Thread.sleep(2000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    RandomBlock();
-                    SimonSay();
+        game();
+        if (test)
+        {
+            btns[1].setBackgroundColor(Color.BLACK);
+        }
+        else{
+            NbVie -=1;
 
-
-
-                }
-            });
-            tempsMort.start();
-            for (int idx=0; idx<maxBlock; idx++){
-                int finalIdx = idx;
-                btns[1].setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        PlayerBlock[finalIdx] = 1;
-                        btns[1].setBackgroundColor(Color.BLACK);
-                    }
-                });
-
-                btns[2].setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        PlayerBlock[finalIdx] = 2;
-                    }
-                });
-
-                btns[3].setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        PlayerBlock[finalIdx] = 3;
-                    }
-                });
-
-                btns[4].setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        PlayerBlock[finalIdx] = 4;
-                    }
-                });
-            }
-
-            verification();
         }
     }
 
@@ -229,16 +187,91 @@ public class MainActivity extends AppCompatActivity {
     public void verification()
     {
 
-        for (int idx=0; idx<maxBlock; idx++)
-        {
-            if (nombreAleatoire[idx] == PlayerBlock[idx]){
-
-            }
-            else{
                 NbVie -= 1;
-            }
-        }
+
     }
+
+    public void game(){
+
+            t1.setText("Nombre de vie : "+ NbVie);
+            Thread tempsMort = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    RandomBlock();
+                    SimonSay();
+                    for (int idx=0; idx<maxBlock; idx++){
+                        int finalIdx = idx;
+
+                        btns[1].setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                if (nombreAleatoire[finalIdx] == 1)
+                                {
+                                    test = true;
+                                }
+                                else{
+                                    btns[1].setBackgroundColor(Color.BLACK);
+                                }
+                                btns[1].setBackgroundColor(Color.BLACK);
+                            }
+                        });
+
+                        btns[2].setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                if (nombreAleatoire[finalIdx] == 2)
+                                {
+                                    test = true;
+                                }
+                                else{
+                                    btns[1].setBackgroundColor(Color.BLACK);
+                                }
+                            }
+                        });
+
+                        btns[3].setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                if (nombreAleatoire[finalIdx] == 3)
+                                {
+                                    test = true;
+                                }
+                                else{
+                                    btns[1].setBackgroundColor(Color.BLACK);
+                                }
+                            }
+                        });
+
+                        btns[4].setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                if (nombreAleatoire[finalIdx] == 4)
+                                {
+                                    test = true;
+                                }
+                                else{
+                                    btns[1].setBackgroundColor(Color.BLACK);
+                                }
+                            }
+                        });
+                    }
+
+
+
+
+                }
+            });
+            tempsMort.start();
+
+
+
+        }
+
 
 
 
