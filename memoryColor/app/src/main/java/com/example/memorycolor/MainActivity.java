@@ -26,65 +26,69 @@ public class MainActivity extends AppCompatActivity {
     int maxBlock = 1;
     Handler handler = new Handler();
     TextView t1;
-
+    int NbVie = 2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView t1 = (TextView) findViewById(R.id.Nbvie);
+        t1 = (TextView) findViewById(R.id.Nbvie);
         btns[1] = findViewById(R.id.btn1);
         btns[2] = findViewById(R.id.btn2);
         btns[3] = findViewById(R.id.btn3);
         btns[4] = findViewById(R.id.btn4);
         nbBlockIlumine += 2;
-        t1.setText("Nombre de vie : 2");
-        Thread tempsMort = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                RandomBlock();
-                SimonSay();
+        for (int idx1=0; idx1<2; idx1++ ){
+            t1.setText("Nombre de vie : "+ NbVie);
+            Thread tempsMort = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    RandomBlock();
+                    SimonSay();
 
+
+
+                }
+            });
+            tempsMort.start();
+            for (int idx=0; idx<maxBlock; idx++){
+                int finalIdx = idx;
+                btns[1].setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        PlayerBlock[finalIdx] = 1;
+                        btns[1].setBackgroundColor(Color.BLACK);
+                    }
+                });
+
+                btns[2].setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        PlayerBlock[finalIdx] = 2;
+                    }
+                });
+
+                btns[3].setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        PlayerBlock[finalIdx] = 3;
+                    }
+                });
+
+                btns[4].setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        PlayerBlock[finalIdx] = 4;
+                    }
+                });
             }
-        });
-        tempsMort.start();
 
-        for (int idx=0; idx<maxBlock; idx++){
-            int finalIdx = idx;
-            btns[1].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    PlayerBlock[finalIdx] = 1;
-                }
-            });
-
-            btns[2].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    PlayerBlock[finalIdx] = 2;
-                }
-            });
-
-            btns[3].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    PlayerBlock[finalIdx] = 3;
-                }
-            });
-
-            btns[4].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    PlayerBlock[finalIdx] = 4;
-                }
-            });
+            verification();
         }
-
-
     }
 
 
@@ -224,13 +228,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void verification()
     {
+
         for (int idx=0; idx<maxBlock; idx++)
         {
             if (nombreAleatoire[idx] == PlayerBlock[idx]){
 
             }
             else{
-                t1.setText("Nombre de vie : 1");
+                NbVie -= 1;
             }
         }
     }
