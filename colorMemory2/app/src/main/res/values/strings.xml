@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">colorMemory2</string>
+    <string name="send">Envoyer</string>
+    <string name="pseudo_text">Pseudo</string>
+    <string name="passwd_text">Mot de passe</string>
+    <string name="email_text">Email</string>
+    <string name="title_register">Inscription</string>
+    <string name="title_login">Connexion</string>
+    <string name="btn_connection">Se connecter</string>
+    <string name="btn_register">S\'inscrire</string>
+    <string name="btn_link_register">cliquez ici pour vous inscrire</string>
+    <string name="title_game">Simon</string>
+    <string name="mode_easy">Facile</string>
+    <string name="mode_hard">Difficile</string>
+    <string name="mode_expert">Expert</string>
+    <string name="mode_chrono">Chrono</string>
+    <string name="classement">Classement</string>
+    <string name="how_play">Comment jouer</string>
+    <string name="passwd_confirmed_text">Confirmer le mot de passe</string>
+</resources>
