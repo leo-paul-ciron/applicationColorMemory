@@ -28,8 +28,6 @@ public class Connection extends AppCompatActivity {
         db=new SQLiteHelper(getApplicationContext());
 
 
-
-
         connect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

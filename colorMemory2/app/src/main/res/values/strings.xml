@@ -17,4 +17,18 @@
     <string name="classement">Classement</string>
     <string name="how_play">Comment jouer</string>
     <string name="passwd_confirmed_text">Confirmer le mot de passe</string>
+    <string name="block1"></string>
+    <string name="block2"></string>
+    <string name="block3"></string>
+    <string name="block4"></string>
+    <string name="block5"></string>
+    <string name="block6"></string>
+    <string name="block7"></string>
+    <string name="block8"></string>
+    <string name="block9"></string>
+    <string name="block10"></string>
+    <string name="block11"></string>
+    <string name="Nbvie">Nombre de vie : </string>
+    <string name="Point">Point: </string>
+    <string name="rules_modes">Pour jouer vous avez 4 modes de jeu qui ont chacun des spécificités :\n\n-Le mode facile : le multiplicateur de point vaut 1, vous avez 2 vies et le nombre de blocs éclairés démarre de 1 jusqu\'à 10.\n\n-Le mode difficile : le multiplicateur vaut 1,5, vous avez 2 vies et le nombre de blocs éclairés démarre de 3 jusqu\'à 15.\n\n-Le mode expert : le multiplicateur de point vaut 3, vous avez 3 vies et le nombre de blocs éclairés démarre de 5 jusqu\'à 20.</string>
 </resources>

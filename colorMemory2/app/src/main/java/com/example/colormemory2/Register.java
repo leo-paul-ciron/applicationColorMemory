@@ -30,14 +30,12 @@ public class Register extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(db.addUser(name.getText().toString(), email.getText().toString(), pwd.getText().toString(), 0)
-                        && name.getText().toString().trim().length() != 0 && email.getText().toString().trim().length() != 0 && pwd.getText().toString().trim().length() != 0) {
-
+                if(name.getText().toString().equals("") || email.getText().toString().equals("") || pwd.getText().toString().equals("")) {
+                    Toast.makeText(Register.this, "Vous avez oublié d'inscrire des données", Toast.LENGTH_SHORT).show();
+                }
+                else if(db.addUser(name.getText().toString(), email.getText().toString(), pwd.getText().toString(), 0)){
                     Intent intent = new Intent(Register.this, Connection.class);
                     startActivity(intent);
-                }
-                else{
-                    Toast.makeText(Register.this, "Erreur d'enregistrement", Toast.LENGTH_SHORT).show();
                 }
             }
         });

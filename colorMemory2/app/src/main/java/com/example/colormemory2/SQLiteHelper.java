@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import java.util.List;
+
 public class SQLiteHelper extends SQLiteOpenHelper {
     public static String BDD_NAME = "GamersBDD", TABLE_NAME = "Gamers", ID = "id";
     public static String PSEUDO = "pseudo", LOGIN = "login", PASSWORD = "password", SCORE = "score";
@@ -83,6 +85,16 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         } else
             return null;
     }
+
+
+    Cursor viewData(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM Gamers ORDER BY score DESC";
+        Cursor cursor = db.rawQuery(query, null);
+
+        return cursor;
+    }
+
 
 
 }

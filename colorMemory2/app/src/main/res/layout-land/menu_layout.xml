@@ -35,8 +35,8 @@
         android:id="@+id/btn_ranked"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="20dp"
         android:background="@color/teal_700"
         android:text="@string/classement"
         app:backgroundTint="@null"
@@ -47,8 +47,8 @@
         android:id="@+id/btn_howplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="20dp"
         android:background="@color/teal_700"
         android:text="@string/how_play"
         app:backgroundTint="@null"
@@ -57,10 +57,10 @@
 
     <Button
         android:id="@+id/btn_chrono"
-        android:layout_width="180dp"
-        android:layout_height="171dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="100dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/mode_chrono"
         app:backgroundTint="@null"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,20 +68,20 @@
 
     <Button
         android:id="@+id/btn_facile"
-        android:layout_width="180dp"
-        android:layout_height="171dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="100dp"
+        android:layout_width="130dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="210dp"
         android:background="@drawable/bloc_mode_facile"
         app:backgroundTint="@null"
-        app:layout_constraintStart_toEndOf="@+id/btn_chrono"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_expert"
-        android:layout_width="180dp"
-        android:layout_height="171dp"
-        android:layout_marginStart="25dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="220dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/mode_expert"
         app:backgroundTint="@null"
@@ -90,13 +90,13 @@
 
     <Button
         android:id="@+id/btn_expert2"
-        android:layout_width="174dp"
-        android:layout_height="169dp"
-        android:layout_marginStart="10dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="215dp"
         android:background="@drawable/mode_difficile"
         app:backgroundTint="@null"
-        app:layout_constraintStart_toEndOf="@+id/btn_expert"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_facile" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
