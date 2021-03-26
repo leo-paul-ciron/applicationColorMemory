@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Color;
 import android.os.Bundle;
 
-import android.os.CountDownTimer;
+
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
@@ -36,7 +36,8 @@ public class ModeFacile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.layout_mode_facile);
+
         t1 = (TextView) findViewById(R.id.Nbvie);
         t2 = (TextView) findViewById(R.id.point);
         btns[1] = findViewById(R.id.btn1);
@@ -107,32 +108,34 @@ public class ModeFacile extends AppCompatActivity {
             if(PlayerBlock[iteration] == nombreAleatoire[iteration])
             {
                 compteurPoint ++;
+                iteration++;
                 Toast.makeText(getApplicationContext(), "Bravo", Toast.LENGTH_LONG).show();
+
             }
             else{
                 compteurPoint--;
+                iteration++;
+            }
+        }
+        if(iteration==maxBlock) {
+            if (compteurPoint == maxBlock) {
+                niveau += 1;
+                point += 1 * niveau;
+                game();
+            } else {
+                niveau = 1;
+                NbVie -= 1;
+                game();
             }
         }
 
-        if(compteurPoint == maxBlock-1)
-        {
-            niveau+=1;
-            point+=1*niveau;
-            game();
-        }
-        else{
-            niveau = 1;
-            NbVie -= 1;
-            game();
+
+
         }
 
 
 
 
-
-
-
-    }
 
 
     public void CLickJoueur(){
@@ -231,6 +234,12 @@ public class ModeFacile extends AppCompatActivity {
                 handler.postDelayed(ButtonColorNormal, 8700);
             }
             CLickJoueur();
+
+            if((niveau>1)&&(niveau<8))
+            {
+                btns[niveau+3].setVisibility(View.VISIBLE);
+            }
+            
         }
         else{
             Toast.makeText(getApplicationContext(), "Perdu", Toast.LENGTH_LONG).show();
