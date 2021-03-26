@@ -15,12 +15,12 @@ import android.widget.Toast;
 import java.util.Random;
 
 
-public class ModeFacile extends AppCompatActivity {
+public class ModeDifficile extends AppCompatActivity {
 
     Random rand = new Random();
-    private Button[] btns = new Button[10];
-    int[] nombreAleatoire = new int[10];
-    int[] PlayerBlock = new int[10];
+    private Button[] btns = new Button[15];
+    int[] nombreAleatoire = new int[15];
+    int[] PlayerBlock = new int[15];
     int maxBlock = 0;
     Handler handler = new Handler();
     TextView t1;
@@ -31,12 +31,12 @@ public class ModeFacile extends AppCompatActivity {
     int compteurPoint = 0;
     int niveau = 1;
     int colorindex = 0;
-    int nombreBlock = 4;
+    int nombreBlock = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_mode_facile);
+        setContentView(R.layout.activity_mode_difficile);
 
         t1 = (TextView) findViewById(R.id.Nbvie);
         t2 = (TextView) findViewById(R.id.point);
@@ -50,8 +50,13 @@ public class ModeFacile extends AppCompatActivity {
         btns[7] = findViewById(R.id.btn8);
         btns[8] = findViewById(R.id.btn9);
         btns[9]= findViewById(R.id.btn10);
+        btns[10] = findViewById(R.id.btn11);
+        btns[11] = findViewById(R.id.btn12);
+        btns[12] = findViewById(R.id.btn13);
+        btns[13] = findViewById(R.id.btn14);
+        btns[14] = findViewById(R.id.btn15);
 
-
+        btns[0].setBackgroundColor(Color.BLUE);
         btns[1].setBackgroundColor(Color.RED);
         btns[2].setBackgroundColor(Color.GREEN);
         btns[3].setBackgroundColor(Color.YELLOW);
@@ -61,7 +66,12 @@ public class ModeFacile extends AppCompatActivity {
         btns[7].setBackgroundColor(Color.GREEN);
         btns[8].setBackgroundColor(Color.BLUE);
         btns[9].setBackgroundColor(Color.RED);
-        btns[0].setBackgroundColor(Color.BLUE);
+        btns[10].setBackgroundColor(Color.GREEN);
+        btns[11].setBackgroundColor(Color.BLUE);
+        btns[12].setBackgroundColor(Color.RED);
+        btns[13].setBackgroundColor(Color.YELLOW);
+        btns[14].setBackgroundColor(Color.GREEN);
+
 
         game();
 
@@ -87,7 +97,6 @@ public class ModeFacile extends AppCompatActivity {
     Runnable ButtonColorNormal = new Runnable() {
         @Override
         public void run() {
-            btns[0].setBackgroundColor(Color.BLUE);
             btns[1].setBackgroundColor(Color.RED);
             btns[2].setBackgroundColor(Color.GREEN);
             btns[3].setBackgroundColor(Color.YELLOW);
@@ -97,7 +106,12 @@ public class ModeFacile extends AppCompatActivity {
             btns[7].setBackgroundColor(Color.GREEN);
             btns[8].setBackgroundColor(Color.BLUE);
             btns[9].setBackgroundColor(Color.RED);
-
+            btns[10].setBackgroundColor(Color.GREEN);
+            btns[11].setBackgroundColor(Color.BLUE);
+            btns[12].setBackgroundColor(Color.RED);
+            btns[13].setBackgroundColor(Color.YELLOW);
+            btns[14].setBackgroundColor(Color.GREEN);
+            btns[0].setBackgroundColor(Color.BLUE);
         }
     };
 
@@ -133,7 +147,7 @@ public class ModeFacile extends AppCompatActivity {
 
 
 
-        }
+    }
 
 
 
@@ -146,7 +160,7 @@ public class ModeFacile extends AppCompatActivity {
             public void onClick(View v) {
                 PlayerBlock[iteration] = 0;
                 test();
-
+                Toast.makeText(getApplicationContext(), ""+nombreAleatoire[0], Toast.LENGTH_LONG).show();
                 t1.setText("nombre de vie: "+NbVie);
                 t2.setText("Point: "+point);
 
@@ -157,7 +171,7 @@ public class ModeFacile extends AppCompatActivity {
             public void onClick(View v) {
                 PlayerBlock[iteration] = 1;
                 test();
-
+                Toast.makeText(getApplicationContext(), ""+nombreAleatoire[0], Toast.LENGTH_LONG).show();
 
                 t1.setText("nombre de vie: "+NbVie);
                 t2.setText("Point: "+point);
@@ -169,7 +183,7 @@ public class ModeFacile extends AppCompatActivity {
             public void onClick(View v) {
                 PlayerBlock[iteration] = 2;
                 test();
-
+                Toast.makeText(getApplicationContext(), ""+nombreAleatoire[0], Toast.LENGTH_LONG).show();
 
                 t1.setText("nombre de vie: "+NbVie);
                 t2.setText("Point: "+point);
@@ -181,8 +195,6 @@ public class ModeFacile extends AppCompatActivity {
             public void onClick(View v) {
                 PlayerBlock[iteration] = 3;
                 test();
-                
-
                 t1.setText("nombre de vie: "+NbVie);
                 t2.setText("Point: "+point);
 
@@ -253,10 +265,60 @@ public class ModeFacile extends AppCompatActivity {
             }
         });
 
+        btns[10].setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                PlayerBlock[iteration] = 10;
+                test();
 
+                t1.setText("nombre de vie: "+NbVie);
+                t2.setText("Point: "+point);
 
+            }
+        });
 
+        btns[11].setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                PlayerBlock[iteration] = 11;
+                test();
 
+                t1.setText("nombre de vie: "+NbVie);
+                t2.setText("Point: "+point);
+
+            }
+        });
+
+        btns[12].setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                PlayerBlock[iteration] = 12;
+                test();
+
+                t1.setText("nombre de vie: "+NbVie);
+                t2.setText("Point: "+point);
+
+            }
+        });
+
+        btns[13].setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                PlayerBlock[iteration] = 13;
+                test();
+
+                t1.setText("nombre de vie: "+NbVie);
+                t2.setText("Point: "+point);
+
+            }
+        });
+
+        btns[14].setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                PlayerBlock[iteration] = 14;
+                test();
+
+                t1.setText("nombre de vie: "+NbVie);
+                t2.setText("Point: "+point);
+
+            }
+        });
     }
 
     public void  game()
@@ -309,13 +371,38 @@ public class ModeFacile extends AppCompatActivity {
                 handler.postDelayed(ButtonColor, 8300);
                 handler.postDelayed(ButtonColorNormal, 8700);
             }
+
+            if (maxBlock > 10) {
+                handler.postDelayed(ButtonColor, 9000);
+                handler.postDelayed(ButtonColorNormal, 9400);
+            }
+
+            if (maxBlock > 11) {
+                handler.postDelayed(ButtonColor, 9700);
+                handler.postDelayed(ButtonColorNormal, 10000);
+            }
+
+            if (maxBlock > 12) {
+                handler.postDelayed(ButtonColor, 10300);
+                handler.postDelayed(ButtonColorNormal, 10700);
+            }
+
+            if (maxBlock > 13) {
+                handler.postDelayed(ButtonColor, 11000);
+                handler.postDelayed(ButtonColorNormal, 11400);
+            }
+
+            if (maxBlock > 14) {
+                handler.postDelayed(ButtonColor, 11700);
+                handler.postDelayed(ButtonColorNormal, 12100);
+            }
             CLickJoueur();
 
-            if((niveau>1)&&(niveau<8))
+            if((niveau>1)&&(niveau<12))
             {
-                btns[niveau+2].setVisibility(View.VISIBLE);
+                btns[niveau+1].setVisibility(View.VISIBLE);
             }
-            
+
         }
         else{
             Toast.makeText(getApplicationContext(), "Perdu", Toast.LENGTH_LONG).show();

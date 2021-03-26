@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_logo_simon"
         android:supportsRtl="true"
         android:theme="@style/Theme.ColorMemory2">
-        <activity android:name=".ModeFacile"></activity>
+        <activity android:name=".ModeDifficile"></activity>
+        <activity android:name=".ModeFacile" />
         <activity android:name=".Ranked" />
         <activity android:name=".How_play" />
         <activity android:name=".SplashScreenActivity">
