@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class Menu extends AppCompatActivity {
 
     TextView user, score;
-    Button how_play, ranked, easy_btn, hard_btn;
+    Button how_play, ranked, easy_btn, hard_btn, expert_btn;
     SQLiteHelper db;
 
     @Override
@@ -23,7 +23,7 @@ public class Menu extends AppCompatActivity {
         score = findViewById(R.id.score_menu);
         easy_btn = findViewById(R.id.btn_facile);
         hard_btn = findViewById(R.id.btn_expert2);
-
+        expert_btn = findViewById(R.id.btn_expert);
         Intent intent = getIntent();
         String username = intent.getStringExtra("username");
         user.setText(username);
@@ -66,6 +66,14 @@ public class Menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Menu.this, ModeDifficile.class);
+                startActivity(intent);
+            }
+        });
+
+        expert_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Menu.this, ModeExpert.class);
                 startActivity(intent);
             }
         });
